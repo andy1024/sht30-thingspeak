@@ -16,9 +16,11 @@ SHT3X sht30(0x45);
 
 WiFiClient client;
 
-
-void displaySensorDetails(void)
+void setup(void) 
 {
+  Serial.begin(9600);
+  Serial.println("SHT30 storage watcher"); 
+  Serial.println("");
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
    while (WiFi.status() != WL_CONNECTED) {
@@ -29,13 +31,6 @@ void displaySensorDetails(void)
   Serial.println("WiFi connected");
   ThingSpeak.begin(client); 
   Serial.println("ThingSpeak client initialized");
-}
-
-void setup(void) 
-{
-  Serial.begin(9600);
-  Serial.println("SHT30 storage watcher"); 
-  Serial.println("");
 }
 
 void loop(void) {
