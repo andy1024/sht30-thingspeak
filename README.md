@@ -13,3 +13,9 @@ update config.h to match your configuration:
 * password - your wifi pass
 * myChannelNumber - your thingspeak channel number
 
+This code uses:
+* Adafruit_sensor library
+* Adafruit_SGP30 library
+* Thingspeak library
+* WEMOS_SHT3x library
+* ESP8266Wifi library
